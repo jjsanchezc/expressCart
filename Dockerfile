@@ -1,6 +1,5 @@
-FROM mhart/alpine-node:8
-
-ENV NODE_VERSION 8.9.4
+FROM node:10.5-alpine
+ENV NODE_VERSION 10.5
 
 RUN apk add --no-cache make gcc g++ python bash
 
@@ -22,4 +21,4 @@ RUN npm install
 VOLUME /var/expressCart/data
 
 EXPOSE 1111
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["npm", "start", "--production"]
